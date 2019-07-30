@@ -5,8 +5,12 @@ let assert = require('assert')
 // Write a function called isOdd that returns whether or not a number is odd.
 // If something that is not a number is passed in, return false.
 
+function isOdd(num) {
+  return num % 2 === 1
+}
+
 // Uncomment out the next line to test your solution
-// runQ1Tests()
+runQ1Tests()
 
 
 // Question Two:
@@ -73,6 +77,14 @@ let assert = require('assert')
 
 
 // The code below is used to test your solutions.  Feel free to look over it, but do not change any of it.
+
+function TestCase(input, output) {
+  this.input = input
+  this.output = output
+  this.formattedInput = () => {
+    return JSON.stringify(this.input)
+  }
+}
 
 function runTests(questionNum, testCases, testCallback) {
   console.log(`Question ${questionNum} Tests`)
