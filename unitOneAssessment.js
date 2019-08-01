@@ -95,7 +95,12 @@ function runTests(questionNum, testCases, testCallback) {
     console.log(`All Question ${questionNum} tests passed!\n`)
   }
   catch(error) {
-    console.log(`\nTest failed.  Was expecting "${error.expected}", but got "${error.actual}"`)
+    if (error.expected === undefined) {
+      console.log("An unexpected error occurred running the test")
+      console.log(error)
+    } else {
+      console.log(`\nTest failed.  Was expecting "${error.expected}", but got "${error.actual}"`)
+    }
   }
 }
 
