@@ -19,13 +19,7 @@ runQ1Tests()
 // Question Two:
 
 // Write a function called numberOfDigits that returns how many digits are in a given number
-const numberOfDigits =(num) =>{
-
-  let test  = num.toString().length;
-  // tracker = test.length
-    return test;
-  }
-
+const numberOfDigits =(num) => digits = num.toString().length;
 // Uncomment out the next line to test your solution
 runQ2Tests()
 
@@ -36,41 +30,31 @@ runQ2Tests()
 const disemvowel = (str) =>{
  let strArr = str.split('');
 //  console.log(strArr)
-  return strArr.map( el =>{
-    if (strArr[el] === /aeiou/i){
-      return strArr.splice(el)
-    }
+  let test = strArr.filter( el =>{
+    return el !== 'o' &&  el !== 'e' && el !== 'a' && el !== 'u' && el !== 'i'
+    && el !== 'A' && el !=='E' && el !== 'I' && el !== 'O' && el !== 'U'
+      
   })
-  
+  // console.log(test);
+  return test.join('')
 }
 // Uncomment out the next line to test your solution
-// runQ3Tests()
+runQ3Tests()
 
 // Question Four:
 // Write a function called secondSmallest that returns the second smallest number in an array
 const secondSmallest =(arr) =>{
-  let firstSmall =arr[0]
-  let secondSmall;
-   for( let i= 0; i < arr.length; i++){
-     if (firstSmall > arr[i]){
-       firstSmall = arr[i]
-       secondSmall = firstSmall
-     }
-   }
-   return secondSmall;
+  arr.sort((a,b) => a-b)  
+  return secondSmall = arr[1]
 }
 // Uncomment out the next line to test your solution
-// runQ4Tests()
+runQ4Tests()
 
 // Question Five:
 // Write a function called getLocations that takes in an array of objects that look like the array below,
 // and returns an array of the strings corresponding to the value of the location property
 // The output should be in the same order as the input
-const getLocations = (arr)=>{
-return arr.map( el => {
-  return el.location
-})
-}
+const getLocations = (arr)=> arr.map( el => el.location)
 // Sample input:
 // [{location: "Algeria", population: 41}, {location: "Belize", population: 0.4}, {location: "China", population: 1386}, {location: "Denmark", population: 6}]
 
@@ -78,18 +62,16 @@ return arr.map( el => {
 // ["Algeria", "Belize", "China", "Denmark"]
 
 // Uncomment out the next line to test your solution
-// runQ5Tests()
+runQ5Tests()
 
 
 // Question Six:
 
 // Write a function called onlyOddStrings that takes in an array of strings as input and returns an array that only includes strings with an odd number of characters
 // Your function should use a higher-ordered function (e.g map, filter, reduce, every, sort) in its implementation
-const onlyOddStrings = (arr) =>{
-  return arr.filter( el => el.length % 2 !==0)
-}
+const onlyOddStrings = (arr) =>arr.filter( el => el.length % 2 !==0)
 // Uncomment out the next line to test your solution
-// runQ6Tests()
+runQ6Tests()
 
 
 // Question Seven:
@@ -110,7 +92,7 @@ class Day {
 }
 
 // Example
-// let myDay = Day(80, "sunny")
+// let myDay = new Day(80, "sunny")
 // myDay.getDescription() // returns "It is 80 degrees and sunny"
 
 //b.
@@ -120,7 +102,7 @@ class Day {
 const getAllDayDescriptions = (arr) => arr.map(el => el.getDescription())
 
 // Uncomment out the next line to test your solution
-// runQ7Tests()
+runQ7Tests()
 
 
 
