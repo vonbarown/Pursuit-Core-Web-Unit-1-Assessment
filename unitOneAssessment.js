@@ -4,7 +4,7 @@ let assert = require('assert')
 
 // Write a function called isOdd that returns whether or not a number is odd.
 // If something that is not a number is passed in, return false.
-const isOdd = (num) =>{
+const isOdd = (num) => {
   if (!isNaN(num) && num % 2 !== 0){
       return true;
   } else {
@@ -27,7 +27,7 @@ runQ2Tests()
 
 // Write a function called disemvowel that removes all of the vowels from a string.
 // Treat y as a consonant, not a vowel
-const disemvowel = (str) =>{
+const disemvowel = (str) => {
  let strArr = str.split('');
 //  console.log(strArr)
   let test = strArr.filter( el =>{
@@ -43,8 +43,8 @@ runQ3Tests()
 
 // Question Four:
 // Write a function called secondSmallest that returns the second smallest number in an array
-const secondSmallest = (arr) =>{
-  arr.sort((a,b) => a-b)  
+const secondSmallest = (arr) => {
+  arr.sort( ( a , b ) => a - b )  
   return secondSmall = arr[1]
 }
 // Uncomment out the next line to test your solution
