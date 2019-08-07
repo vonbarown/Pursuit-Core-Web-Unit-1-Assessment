@@ -4,7 +4,7 @@ let assert = require('assert')
 
 // Write a function called isOdd that returns whether or not a number is odd.
 // If something that is not a number is passed in, return false.
-const isOdd =(num) =>{
+const isOdd = (num) =>{
   if (!isNaN(num) && num % 2 !== 0){
       return true;
   } else {
@@ -19,7 +19,7 @@ runQ1Tests()
 // Question Two:
 
 // Write a function called numberOfDigits that returns how many digits are in a given number
-const numberOfDigits =(num) => digits = num.toString().length;
+const numberOfDigits = (num) => num.toString().length;
 // Uncomment out the next line to test your solution
 runQ2Tests()
 
@@ -43,7 +43,7 @@ runQ3Tests()
 
 // Question Four:
 // Write a function called secondSmallest that returns the second smallest number in an array
-const secondSmallest =(arr) =>{
+const secondSmallest = (arr) =>{
   arr.sort((a,b) => a-b)  
   return secondSmall = arr[1]
 }
@@ -54,7 +54,7 @@ runQ4Tests()
 // Write a function called getLocations that takes in an array of objects that look like the array below,
 // and returns an array of the strings corresponding to the value of the location property
 // The output should be in the same order as the input
-const getLocations = (arr)=> arr.map( el => el.location)
+const getLocations = (arr) => arr.map( el => el.location)
 // Sample input:
 // [{location: "Algeria", population: 41}, {location: "Belize", population: 0.4}, {location: "China", population: 1386}, {location: "Denmark", population: 6}]
 
@@ -69,7 +69,7 @@ runQ5Tests()
 
 // Write a function called onlyOddStrings that takes in an array of strings as input and returns an array that only includes strings with an odd number of characters
 // Your function should use a higher-ordered function (e.g map, filter, reduce, every, sort) in its implementation
-const onlyOddStrings = (arr) =>arr.filter( el => el.length % 2 !==0)
+const onlyOddStrings = (arr) => arr.filter( el => el.length % 2 !==0)
 // Uncomment out the next line to test your solution
 runQ6Tests()
 
