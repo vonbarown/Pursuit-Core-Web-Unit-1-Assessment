@@ -20,13 +20,7 @@ runQ2Tests()
 
 // Write a function called disemvowel that removes all of the vowels from a string.
 // Treat y as a consonant, not a vowel
-const disemvowel = (str) => {
-  let strArr = str.split('');
-  //  console.log(strArr)
-  let test = strArr.filter(el => !el.match(/[aeiou]/i))
-  // console.log(test);
-  return test.join('')
-}
+const disemvowel = (str) => str.split('').filter(el => !el.match(/[aeiou]/i)).join('')
 // Uncomment out the next line to test your solution
 runQ3Tests()
 
