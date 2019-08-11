@@ -4,7 +4,7 @@ let assert = require('assert')
 
 // Write a function called isOdd that returns whether or not a number is odd.
 // If something that is not a number is passed in, return false.
-const isOdd = (num) => !isNaN(num) && num % 2 !== 0  
+const isOdd = (num) => !isNaN(num) && num % 2 !== 0
 // Uncomment out the next line to test your solution
 runQ1Tests()
 
@@ -21,13 +21,9 @@ runQ2Tests()
 // Write a function called disemvowel that removes all of the vowels from a string.
 // Treat y as a consonant, not a vowel
 const disemvowel = (str) => {
- let strArr = str.split('');
-//  console.log(strArr)
-  let test = strArr.filter( el =>{
-    return el !== 'o' &&  el !== 'e' && el !== 'a' && el !== 'u' && el !== 'i'
-    && el !== 'A' && el !=='E' && el !== 'I' && el !== 'O' && el !== 'U'
-      
-  })
+  let strArr = str.split('');
+  //  console.log(strArr)
+  let test = strArr.filter(el => !el.match(/[aeiou]/i))
   // console.log(test);
   return test.join('')
 }
@@ -37,7 +33,7 @@ runQ3Tests()
 // Question Four:
 // Write a function called secondSmallest that returns the second smallest number in an array
 const secondSmallest = (arr) => {
-  arr.sort( ( a , b ) => a - b )  
+  arr.sort((a, b) => a - b)
   return secondSmall = arr[1]
 }
 // Uncomment out the next line to test your solution
@@ -47,7 +43,7 @@ runQ4Tests()
 // Write a function called getLocations that takes in an array of objects that look like the array below,
 // and returns an array of the strings corresponding to the value of the location property
 // The output should be in the same order as the input
-const getLocations = (arr) => arr.map( el => el.location)
+const getLocations = (arr) => arr.map(el => el.location)
 // Sample input:
 // [{location: "Algeria", population: 41}, {location: "Belize", population: 0.4}, {location: "China", population: 1386}, {location: "Denmark", population: 6}]
 
@@ -62,7 +58,7 @@ runQ5Tests()
 
 // Write a function called onlyOddStrings that takes in an array of strings as input and returns an array that only includes strings with an odd number of characters
 // Your function should use a higher-ordered function (e.g map, filter, reduce, every, sort) in its implementation
-const onlyOddStrings = (arr) => arr.filter( el => el.length % 2 !==0)
+const onlyOddStrings = (arr) => arr.filter(el => el.length % 2 !== 0)
 // Uncomment out the next line to test your solution
 runQ6Tests()
 
@@ -74,11 +70,11 @@ runQ6Tests()
 // Give it two properties set by the constructor named temperature and weather
 // Give it a method named getDescription that returns a string in the format described below
 class Day {
-  constructor(temperature,weather){
+  constructor(temperature, weather) {
     this.temperature = temperature;
     this.weather = weather;
   }
-  getDescription(){
+  getDescription() {
     return `It is ${this.temperature} degrees and ${this.weather}`
   }
 
@@ -117,8 +113,7 @@ function runTests(questionNum, testCases, testCallback) {
       assert.strictEqual(JSON.stringify(testCallback(testCase.input)), JSON.stringify(testCase.output))
     }
     console.log(`All Question ${questionNum} tests passed!\n`)
-  }
-  catch(error) {
+  } catch (error) {
     if (error.expected === undefined) {
       console.log("An unexpected error occurred running the test")
       console.log(error)
@@ -130,7 +125,7 @@ function runTests(questionNum, testCases, testCallback) {
 
 function runQ1Tests() {
   let testCases = [
-    new TestCase(1,true),
+    new TestCase(1, true),
     new TestCase(3, true),
     new TestCase(5, true),
     new TestCase(7, true),
@@ -146,13 +141,13 @@ function runQ1Tests() {
 }
 
 function runQ2Tests() {
-    let testCases = [
-      new TestCase(4,1),
-      new TestCase(14,2),
-      new TestCase(8473,4),
-      new TestCase(73746, 5)
-    ]
-    runTests("Two", testCases, numberOfDigits)
+  let testCases = [
+    new TestCase(4, 1),
+    new TestCase(14, 2),
+    new TestCase(8473, 4),
+    new TestCase(73746, 5)
+  ]
+  runTests("Two", testCases, numberOfDigits)
 }
 
 function runQ3Tests() {
@@ -168,10 +163,10 @@ function runQ3Tests() {
 
 function runQ4Tests() {
   let testCases = [
-    new TestCase([5,1,4,2,5,6], 2),
-    new TestCase([1,10,7,90,5,4], 4),
-    new TestCase([2,1,4,90,5,6], 2),
-    new TestCase([1,3,4,90,5,6], 3)
+    new TestCase([5, 1, 4, 2, 5, 6], 2),
+    new TestCase([1, 10, 7, 90, 5, 4], 4),
+    new TestCase([2, 1, 4, 90, 5, 6], 2),
+    new TestCase([1, 3, 4, 90, 5, 6], 3)
   ]
   runTests("Four", testCases, secondSmallest)
 }
@@ -179,15 +174,29 @@ function runQ4Tests() {
 function runQ5Tests() {
   let testCases = [
     new TestCase(
-      [
-        {location: "Algeria", population: 41},
-        {location: "Belize", population: 0.4},
-        {location: "China", population: 1386},
-        {location: "Denmark", population: 6}
+      [{
+          location: "Algeria",
+          population: 41
+        },
+        {
+          location: "Belize",
+          population: 0.4
+        },
+        {
+          location: "China",
+          population: 1386
+        },
+        {
+          location: "Denmark",
+          population: 6
+        }
       ],
       ["Algeria", "Belize", "China", "Denmark"]
     ),
-    new TestCase([{location: "England", population: 56}], ["England"]),
+    new TestCase([{
+      location: "England",
+      population: 56
+    }], ["England"]),
     new TestCase([], [])
   ]
   runTests("Five", testCases, getLocations)
@@ -211,9 +220,9 @@ function runQ6Tests() {
       ["one", "two", "three", "four"],
       ["one", "two", "three"]
     ),
-    new TestCase([],[]),
-    new TestCase(["a"],["a"]),
-    new TestCase(["to"],[])
+    new TestCase([], []),
+    new TestCase(["a"], ["a"]),
+    new TestCase(["to"], [])
   ]
   runTests("Six", testCases, onlyOddStrings)
 }
